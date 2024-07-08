@@ -12,21 +12,44 @@ export default function Accordian() {
         setSelected(selected === getCurrentId ? null : getCurrentId)
     }
 
+    function handleMultiSelect(getCurrentId) {
+        let cpyMultiple = [...multiple];
+        let findIndexOfCurrentId = cpyMultiple.indexOf(getCurrentId);
+
+        if (findIndexOfCurrentId === -1) cpyMultiple.push(getCurrentId);
+        else cpyMultiple.splice(findIndexOfCurrentId, 1);
+
+
+        setMultiple(cpyMultiple)
+    }
+
 
     return <div className="wrapper">
+        <button onClick={() => setEnableMultiSelect(!enableMultiSelect)}> Enable Multi Select</button>
         <div className="accordian">
             {
                 data && data.length > 0 ?
                     data.map(dataItem =>
                         <div className="item">
-                            <div onClick={() => handleSingleSelect(dataItem.id)} className="title">
+                            <div
+                                onClick={enableMultiSelect ? () => handleMultiSelect(dataItem.id) : () => handleSingleSelect(dataItem.id)}
+                                className="title">
                                 <h3>{dataItem.question}</h3>
-                                <span>{selected === dataItem.id ? "-" : "+"}</span>
+                                <span>{
+                                    enableMultiSelect
+                                        ? multiple.indexOf(dataItem.id) !== -1
+                                            ? "-"
+                                            : "+"
+                                        : selected === dataItem.id
+                                            ? "-"
+                                            : "+"
+                                } </span>
                             </div>
                             {
-                                selected === dataItem.id ?
+                                enableMultiSelect ?
+                                    multiple.indexOf(dataItem.id) !== -1 &&
                                     <div className="content">{dataItem.answer}</div>
-                                    : null
+                                    : selected === dataItem.id && <div className="content">{dataItem.answer}</div>
                             }
                         </div>
                     ) : <div>No Data Found</div>
