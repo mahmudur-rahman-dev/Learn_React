@@ -1,6 +1,11 @@
 import './App.css';
 import Accordian from "./components/accordian";
-import Job from "./components/extra";
+import {
+    Job,
+    AgeIncreaseCalc,
+    HideUnhide,
+    Counter,
+} from "./components/extra";
 
 function App() {
 
@@ -11,7 +16,7 @@ function App() {
             company: "Google"
         },
         {
-            name: "Mashruru",
+            name: "Mashrur",
             position: "Data Science",
             company: "Apple"
         },
@@ -22,13 +27,18 @@ function App() {
         },
     ]
 
-  return (
-    <div className="App">
-      {/* Accordian component*/}
-      {/*<Accordian/>*/}
-        <Job job={data}/>
-    </div>
-  );
+    return (
+        <div className="App">
+            {/* Accordian component*/}
+            {/*<Accordian/>*/}
+
+            {/*External project work*/}
+            {/*<Job job={data}/>*/}
+            {/*<AgeIncreaseCalc/>*/}
+            {/*<HideUnhide/>*/}
+            <Counter/>
+        </div>
+    );
 }
 
 export default App;
