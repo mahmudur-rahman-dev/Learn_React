@@ -7,6 +7,8 @@ import {
     Counter,
 } from "./components/extra";
 
+import {Todo} from "./components/todo";
+
 function App() {
 
     const data = [
@@ -36,7 +38,9 @@ function App() {
             {/*<Job job={data}/>*/}
             {/*<AgeIncreaseCalc/>*/}
             {/*<HideUnhide/>*/}
-            <Counter/>
+            {/*<Counter/>*/}
+            <h1>Hello world</h1>
+            <Todo/>
         </div>
     );
 }
