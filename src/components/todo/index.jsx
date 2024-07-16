@@ -1,4 +1,5 @@
 import {useState} from "react"
+import './style.css'
 
 export const Todo = () => {
     const [input, setInput] = useState("");
@@ -27,11 +28,11 @@ export const Todo = () => {
                 </div>
             </div>
 
-            <div>
+            <div className="marquee">
                 {
                     list && list.length ?
                         list.map((item, index) => (
-                            <div key={index}>
+                            <div key={index} style={{display: 'inline-block', marginRight: '20px'}}>
                                 <h4>{item}</h4>
                                 <button onClick={() => handleDeleteTask(item)}>Delete</button>
                             </div>
