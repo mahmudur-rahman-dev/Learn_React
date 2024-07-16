@@ -7,7 +7,8 @@ import {
     Counter,
 } from "./components/extra";
 
-import {Todo} from "./components/todo";
+import { Todo, TextShow } from "./components/todo";
+import {UserInfo} from "./components/cat";
 
 function App() {
 
@@ -39,8 +40,10 @@ function App() {
             {/*<AgeIncreaseCalc/>*/}
             {/*<HideUnhide/>*/}
             {/*<Counter/>*/}
-            <h1>Hello world</h1>
-            <Todo/>
+            {/*<h1>Hello world</h1>*/}
+            {/*<Todo/>*/}
+            {/*<TextShow/>*/}
+            <UserInfo/>
         </div>
     );
 }
