@@ -9,6 +9,7 @@ import {
 
 import { Todo, TextShow } from "./components/todo";
 import {UserInfo} from "./components/cat";
+import {Form} from "./components/form"
 
 function App() {
 
@@ -43,7 +44,8 @@ function App() {
             {/*<h1>Hello world</h1>*/}
             {/*<Todo/>*/}
             {/*<TextShow/>*/}
-            <UserInfo/>
+            {/*<UserInfo/>*/}
+            <Form/>
         </div>
     );
 }
