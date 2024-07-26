@@ -8,6 +8,7 @@ export const Form = () => {
         email: yup.string().email().required(),
         password: yup.string().min(3).required(),
         confirmPassword: yup.string().oneOf([yup.ref("password"), null]).required(),
+        
     })
 
     const {register, handleSubmit, formState: {errors}} = useForm({
